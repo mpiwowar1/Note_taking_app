@@ -1,4 +1,4 @@
-import customtkinter as ct
+
 import objects
 
 app=objects.App()
