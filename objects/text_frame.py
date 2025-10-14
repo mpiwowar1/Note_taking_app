@@ -8,5 +8,8 @@ class TextFrame(ct.CTkFrame):
         self.textbox = ct.CTkTextbox(self, wrap="word",corner_radius=0)
         self.textbox.grid(row=0, column=0, sticky="nsew", padx=0, pady=0)
         self.grid(row=0, column=1, sticky="nsew")
+        file=open("saved_text.txt","r",encoding="utf-8")    
+        self.textbox.insert("0.0", file.read())
+        file.close()
     def get_text(self):
         return self.textbox.get("1.0", "end-1c")
