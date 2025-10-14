@@ -1,6 +1,6 @@
 import customtkinter as ct
-from .otherobjects import MenuButton
-from .otherobjects import MenuButtonCreate
+from .others import MenuButton
+from .others import MenuButtonCreate
 from .text_frame import TextFrame
 
 class MenuFrame(ct.CTkFrame):
