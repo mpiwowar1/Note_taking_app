@@ -1,4 +1,3 @@
-
 import objects
 
 app=objects.App()
