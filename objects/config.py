@@ -16,7 +16,8 @@ def SaveConfig():
 
 def InitConfig():
     Config["IconSet"] = {
-        "Save": str(BASE_DIR.joinpath("img", "menubuttons", "save.png")),
         "File": str(BASE_DIR.joinpath("img", "menubuttons", "file.png")),
+        "Save": str(BASE_DIR.joinpath("img", "menubuttons", "save.png")),
+        "Settings": str(BASE_DIR.joinpath("img", "menubuttons", "settings.png")),
     }   
     SaveConfig()

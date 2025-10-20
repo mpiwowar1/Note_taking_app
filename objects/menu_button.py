@@ -3,10 +3,10 @@ from tkinter import filedialog
 from .popup import Popup
 from .config import Config,SaveConfig
 from .footer import Footer
+from .Checksum import HashString
 
 class MenuButton(ct.CTkButton):
     def __init__(self, master, icon=None, command=None, text=""):
-        # If icon is provided, show only icon, otherwise show text
         if icon:
             super().__init__(master, text="", width=40, height=40, command=command, image=icon)
         else:
@@ -14,7 +14,6 @@ class MenuButton(ct.CTkButton):
 
     @staticmethod
     def save_button_action(text_frame):
-        print("Save command executed")
         texttosave=text_frame.get_text()
         if Config["Last"] is None:
             file = filedialog.asksaveasfilename(
@@ -27,9 +26,9 @@ class MenuButton(ct.CTkButton):
                 SaveConfig()
                 text_frame.footer.update_status()
             else:
-                return  # User cancelled save dialog
+                return 
         plik=open(Config["Last"],"w",encoding="utf-8")
-        plik.write(texttosave)
+        plik.write(texttosave) 
         plik.close()
     @staticmethod
     def file_button_action(text_frame):
@@ -39,7 +38,9 @@ class MenuButton(ct.CTkButton):
         file = filedialog.askopenfilename(
         title="Select a File",
         filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")])
-        if file:
+        if Config["Last"] == file or not file:
+            return
+        if Config["Last"] is not None and HashString(text_frame.get_text()) != HashString(open(Config["Last"], "r", encoding="utf-8").read()):
             popupaction=Popup.PopupSaveCreate(text_frame.master, "Action?", "What to do with the previous file?")
             match popupaction:
                 case 0:
@@ -48,15 +49,18 @@ class MenuButton(ct.CTkButton):
                     MenuButton.save_button_action(text_frame)
                     frame_load_file()
                     Config["Last"]=file
-                    text_frame.footer.update_status()
                     SaveConfig()
                 case 2:
                     frame_load_file()
                     Config["Last"]=file
-                    text_frame.footer.update_status()
                     SaveConfig()
                 case 3:
                     pass
+        else:
+            frame_load_file()
+            Config["Last"]=file
+            SaveConfig()
+        text_frame.footer.update_status()
     @staticmethod
     def create_buttons(master, values, iconset, text_frame, commandset=None):
         buttons = []

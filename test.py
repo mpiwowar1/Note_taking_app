@@ -12,6 +12,3 @@ with open(config_path, "r", encoding="utf-8") as file:
     Config = json.load(file)
 
 print(config_path)
-
-IMG_Path = BASE_DIR / Config["IconSet"]["Save"]
-print(IMG_Path)
