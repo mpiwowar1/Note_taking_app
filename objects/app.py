@@ -12,4 +12,4 @@ class App(ct.CTk):
         self.grid_columnconfigure(1, weight=1)  # Main area expands
         self.grid_rowconfigure(0, weight=1)  # Allow vertical stretch
         self.textframe = TextFrame(self)
-        self.menuframe = MenuFrame(self, "Menu", ["Save"], self.textframe)
+        self.menuframe = MenuFrame(self, "Menu", ["Save","File"], self.textframe)
