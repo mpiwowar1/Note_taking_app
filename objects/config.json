@@ -1,8 +1,13 @@
 {
-    "Last": "C:/Users/Maks/Documents/Learninng/Python/NoteApp/Note_taking_app/sdadfasdf.txt",
+    "Last": "C:/Users/Maks/Documents/Learninng/Python/NoteApp/Note_taking_app/test.txt",
     "Settings": {
         "Appearance": "Dark",
         "FontSize": 26,
         "Font": "Times New Roman"
+    },
+    "IconSet": {
+        "File": "C:\\Users\\Maks\\Documents\\Learninng\\Python\\NoteApp\\Note_taking_app\\objects\\img\\menubuttons\\file.png",
+        "Save": "C:\\Users\\Maks\\Documents\\Learninng\\Python\\NoteApp\\Note_taking_app\\objects\\img\\menubuttons\\save.png",
+        "Settings": "C:\\Users\\Maks\\Documents\\Learninng\\Python\\NoteApp\\Note_taking_app\\objects\\img\\menubuttons\\settings.png"
     }
 }

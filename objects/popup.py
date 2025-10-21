@@ -107,9 +107,8 @@ class Popup(ct.CTkToplevel):
             # Destroy the popup safely after all pending callbacks
             settings_popup.after_idle(settings_popup.destroy)
 
-
-        ct.CTkButton(button_frame, text="Cancel", command=on_cancel).grid(row=0, column=0, sticky="ew", padx=5)
-        ct.CTkButton(button_frame, text="Save", command=on_save).grid(row=0, column=1, sticky="ew", padx=5)
+        ct.CTkButton(button_frame, text="Save", command=on_save).grid(row=0, column=0, sticky="ew", padx=5)
+        ct.CTkButton(button_frame, text="Cancel", command=on_cancel).grid(row=0, column=1, sticky="ew", padx=5)
 
         # Make the popup modal
         settings_popup.grab_set()

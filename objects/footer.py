@@ -6,12 +6,12 @@ class Footer(ct.CTkFrame):
         super().__init__(master, height=height, corner_radius=0)
         self.text_frame = text_frame
         self._set_appearance_mode(Config["Settings"]["Appearance"])
-        self.label = ct.CTkLabel(self, text=Config["Last"] if Config["Last"] else "No directory selected", anchor="w")
+        self.label = ct.CTkLabel(self, text=Config["Last"] if Config["Last"] else "No file selected", anchor="w")
         self.label.pack(fill="both", expand=True, padx=10)
         self.label._set_appearance_mode(Config["Settings"]["Appearance"])
         self.grid(row=1, column=1, columnspan=2, sticky="ew")
         self.columnconfigure(0, weight=0)
     
     def update_status(self):
-        self.label.configure(text=Config["Last"] if Config["Last"] else "No directory selected")
+        self.label.configure(text=Config["Last"] if Config["Last"] else "No file selected")
         self.update_idletasks()
