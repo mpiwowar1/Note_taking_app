@@ -14,7 +14,9 @@ This is my **first Python project**, made to learn GUI programming, file handlin
 
 Won't be improving it or anything.
 
+\\
 Icons used in the buttons:
+\\
 SaveIcon:Yogi Aprelliyanto
 FolderIcon: Freepik
 CogwheelIcon: PixelPerfect
