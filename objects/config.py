@@ -1,23 +1,37 @@
+
 import json
 from pathlib import Path
-from customtkinter import CTkImage
-from PIL import Image
-
-
 
 BASE_DIR = Path(__file__).resolve().parent
-config_path = BASE_DIR / "config.json"
-with open(config_path, "r", encoding="utf-8") as file:
-    Config = json.load(file)
+CONFIG_PATH = BASE_DIR / "config.json"
 
-def SaveConfig():
-    with open(config_path, "w", encoding="utf-8") as file:
-        json.dump(Config, file, indent=4)
+try:
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        Config = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError):
+    Config = {}
+
 
 def InitConfig():
-    Config["IconSet"] = {
-        "File": str(BASE_DIR.joinpath("img", "menubuttons", "file.png")),
-        "Save": str(BASE_DIR.joinpath("img", "menubuttons", "save.png")),
-        "Settings": str(BASE_DIR.joinpath("img", "menubuttons", "settings.png")),
-    }   
-    SaveConfig()
+    Config.setdefault("Last", None)
+    Config.setdefault("IconSet", {
+        "File": str(BASE_DIR / "img/menubuttons/file.png"),
+        "Save": str(BASE_DIR / "img/menubuttons/save.png"),
+        "Settings": str(BASE_DIR / "img/menubuttons/settings.png")
+    })
+    SaveConfig() 
+
+
+def SaveConfig():
+    serializable_config = {}
+    for key, value in Config.items():
+        try:
+            json.dumps({key: value})
+            serializable_config[key] = value
+        except TypeError:
+            print(f"⚠ Skipping non-serializable key in Config: {key}")
+
+    temp_path = CONFIG_PATH.with_suffix(".tmp")
+    with open(temp_path, "w", encoding="utf-8") as f:
+        json.dump(serializable_config, f, indent=4)
+    temp_path.replace(CONFIG_PATH)

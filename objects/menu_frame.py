@@ -12,6 +12,7 @@ class MenuFrame(ct.CTkFrame):
         self.title = title
         self.values = values
         self.text_frame = text_frame
+        self._set_appearance_mode(Config["Settings"]["Appearance"])
         iconset = Config["IconSet"]
         for x in Config["IconSet"].keys():
             iconset[x] = CTkImage(light_image=Image.open(Config["IconSet"][x]), size=(32, 32),)

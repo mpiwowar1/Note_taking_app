@@ -9,9 +9,13 @@ class MenuButton(ct.CTkButton):
     def __init__(self, master, icon=None, command=None, text=""):
         if icon:
             super().__init__(master, text="", width=40, height=40, command=command, image=icon)
+            self._set_appearance_mode(Config["Settings"]["Appearance"])
         else:
             super().__init__(master, text=text, width=40, height=40, command=command)
-
+            self._set_appearance_mode(Config["Settings"]["Appearance"])
+    @staticmethod
+    def settings_button_action():
+        SettingsWindow=Popup.SettingsPopupCreate()
     @staticmethod
     def save_button_action(text_frame):
         texttosave=text_frame.get_text()
@@ -64,7 +68,7 @@ class MenuButton(ct.CTkButton):
     @staticmethod
     def create_buttons(master, values, iconset, text_frame, commandset=None):
         buttons = []
-        commandset = {"Save": lambda: MenuButton.save_button_action(text_frame) ,"File": lambda: MenuButton.file_button_action(text_frame)}
+        commandset = {"Save": lambda: MenuButton.save_button_action(text_frame) ,"File": lambda: MenuButton.file_button_action(text_frame),"Settings": lambda: MenuButton.settings_button_action()}
         for i, value in enumerate(values):
             icon = iconset.get(value)
             command = commandset.get(value)

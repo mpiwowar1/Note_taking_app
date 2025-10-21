@@ -6,7 +6,8 @@
         "Settings": "C:\\Users\\Maks\\Documents\\Learninng\\Python\\NoteApp\\Note_taking_app\\objects\\img\\menubuttons\\settings.png"
     },
     "Settings": {
-        "Theme": "Dark",
-        "FontSize": 14
+        "Appearance": "Dark",
+        "FontSize": 14,
+        "WrapText": true
     }
 }

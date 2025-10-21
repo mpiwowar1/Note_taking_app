@@ -5,9 +5,11 @@ from .footer import Footer
 class TextFrame(ct.CTkFrame):
     def __init__(self, master, font=("Arial", 14)):
         super().__init__(master,corner_radius=0)
+        self._set_appearance_mode(Config["Settings"]["Appearance"])
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
         self.textbox = ct.CTkTextbox(self, wrap="word",corner_radius=0)
+        self.textbox._set_appearance_mode(Config["Settings"]["Appearance"])
         self.textbox.grid(row=0, column=0, sticky="nsew", padx=0, pady=0)
         self.grid(row=0, column=1, sticky="nsew")
         try:
