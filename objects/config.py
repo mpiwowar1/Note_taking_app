@@ -29,7 +29,8 @@ def SaveConfig():
             json.dumps({key: value})
             serializable_config[key] = value
         except TypeError:
-            print(f"⚠ Skipping non-serializable key in Config: {key}")
+            pass  # Skip non-serializable items
+
 
     temp_path = CONFIG_PATH.with_suffix(".tmp")
     with open(temp_path, "w", encoding="utf-8") as f:

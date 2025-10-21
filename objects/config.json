@@ -1,13 +1,9 @@
 {
     "Last": "C:/Users/Maks/Documents/Learninng/Python/NoteApp/Note_taking_app/sdadfasdf.txt",
-    "IconSet": {
-        "File": "C:\\Users\\Maks\\Documents\\Learninng\\Python\\NoteApp\\Note_taking_app\\objects\\img\\menubuttons\\file.png",
-        "Save": "C:\\Users\\Maks\\Documents\\Learninng\\Python\\NoteApp\\Note_taking_app\\objects\\img\\menubuttons\\save.png",
-        "Settings": "C:\\Users\\Maks\\Documents\\Learninng\\Python\\NoteApp\\Note_taking_app\\objects\\img\\menubuttons\\settings.png"
-    },
     "Settings": {
         "Appearance": "Dark",
-        "FontSize": 14,
-        "WrapText": true
+        "FontSize": 12,
+        "WrapText": true,
+        "Font": "Verdana"
     }
 }

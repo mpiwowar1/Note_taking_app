@@ -16,6 +16,6 @@ class MenuFrame(ct.CTkFrame):
         iconset = Config["IconSet"]
         for x in Config["IconSet"].keys():
             iconset[x] = CTkImage(light_image=Image.open(Config["IconSet"][x]), size=(32, 32),)
-        btns = MenuButton.create_buttons(self, values, iconset, text_frame)
+        self.btns = MenuButton.create_buttons(self, values, iconset, text_frame)
         self.grid_rowconfigure(len(values), weight=1)
         self.grid(row=0,rowspan=2, column=0, sticky="ns")

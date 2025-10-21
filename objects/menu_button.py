@@ -14,8 +14,8 @@ class MenuButton(ct.CTkButton):
             super().__init__(master, text=text, width=40, height=40, command=command)
             self._set_appearance_mode(Config["Settings"]["Appearance"])
     @staticmethod
-    def settings_button_action():
-        SettingsWindow=Popup.SettingsPopupCreate()
+    def settings_button_action(text_frame,menu_frame,app_frame):
+        SettingsWindow=Popup.SettingsPopupCreate(text_frame,menu_frame,app_frame)
     @staticmethod
     def save_button_action(text_frame):
         texttosave=text_frame.get_text()
@@ -68,7 +68,7 @@ class MenuButton(ct.CTkButton):
     @staticmethod
     def create_buttons(master, values, iconset, text_frame, commandset=None):
         buttons = []
-        commandset = {"Save": lambda: MenuButton.save_button_action(text_frame) ,"File": lambda: MenuButton.file_button_action(text_frame),"Settings": lambda: MenuButton.settings_button_action()}
+        commandset = {"Save": lambda: MenuButton.save_button_action(text_frame) ,"File": lambda: MenuButton.file_button_action(text_frame),"Settings": lambda: MenuButton.settings_button_action(text_frame,master,master.master)}
         for i, value in enumerate(values):
             icon = iconset.get(value)
             command = commandset.get(value)
@@ -76,3 +76,7 @@ class MenuButton(ct.CTkButton):
             btn.grid(row=i, column=0, padx=10, pady=5, sticky="ew")
             buttons.append(btn)
         return buttons
+    @staticmethod
+    def button_update(buttons):
+        for btn in buttons:
+            btn._set_appearance_mode(Config["Settings"]["Appearance"])
