@@ -29,7 +29,7 @@ def SaveConfig():
             json.dumps({key: value})
             serializable_config[key] = value
         except TypeError:
-            pass  # Skip non-serializable items
+            pass 
 
 
     temp_path = CONFIG_PATH.with_suffix(".tmp")
