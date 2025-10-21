@@ -12,11 +12,10 @@ This is my **first Python project**, made to learn GUI programming, file handlin
 ### Settings
 ![Settings](assets/screenshots/settings.png)
 
-Won't be improving it or anything.
+Won't be improving it or anything.  
 
-Icons used in the buttons:
-#
-SaveIcon:Yogi Aprelliyanto
-FolderIcon: Freepik
-CogwheelIcon: PixelPerfect
+Icons used in the buttons:  
+SaveIcon:Yogi Aprelliyanto  
+FolderIcon: Freepik  
+CogwheelIcon: PixelPerfect  
 
