@@ -10,7 +10,7 @@ This is my **first Python project**, made to learn GUI programming, file handlin
 ![Main App Window](assets/screenshots/main.png)
 
 ### Menu Buttons
-![Menu Buttons](assets/screenshots/settings.png)
+![Settings](assets/screenshots/settings.png)
 
 Won't be improving it or anything.
 
