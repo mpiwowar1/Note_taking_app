@@ -9,7 +9,7 @@ This is my **first Python project**, made to learn GUI programming, file handlin
 ### Main Window
 ![Main App Window](assets/screenshots/main.png)
 
-### Menu Buttons
+### Settings
 ![Settings](assets/screenshots/settings.png)
 
 Won't be improving it or anything.
